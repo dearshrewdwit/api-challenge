@@ -15,7 +15,6 @@ class MessageBoard < Sinatra::Base
     message = request.body.read
     msg = Message.new(contents: message)
     msg.save
-    p msg
   end
 
   get '/jsonRead' do

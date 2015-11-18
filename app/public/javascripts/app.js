@@ -25,10 +25,13 @@ function getData() {
 
 function postData() {
   var post = document.getElementById('message').value;
-  var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","/jsonCreate" , true);
-    xhttp.send(post);
-  getData();
+  document.getElementById('message').value = "";
+  if (post !== "" ) {
+    var xhttp = new XMLHttpRequest();
+      xhttp.open("POST","/jsonCreate" , true);
+      xhttp.send(post);
+    getData();
+  }
 }
 
 function destroyData(id) {
