@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="javascripts/app.js"></script>
+</head>
+</body>
+  <input id="message" type="text">
+  <button id="create">post</button>
+  <div id="feedBox"></div>
+  <ul class="list-group" id="feed">
+    <% @messages.reverse.each do | message | %>
+    <li id="<%= message.id %>">
+      <%= message.contents %>
+      <button class="destroy" id="<%= message.id %>">x</button>
+      <button class="update" id="<%= message.id %>">edit</button>
+    </li>
+    <% end %>
+  </ul>
+  <script>
+    addCreateListener();
+    addDestroyListeners();
+    addUpdateListeners();
+  </script>
+</body>
+</html>
