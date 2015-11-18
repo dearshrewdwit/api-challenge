@@ -1,12 +1,7 @@
 begin
-  require 'rspec/core/rake_task'
   require 'data_mapper'
   require './app/app.rb'
-
-  RSpec::Core::RakeTask.new :spec
-
-  task default: [ :spec]
-rescue LoadError
+  rescue LoadError
 end
 
 namespace :db do
